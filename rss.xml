@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>SMSSync</title>
+    <description>SMSMSync The free and open source SMS gateway for Android devices</description>
+    <link>http://smssync.ushahidi.com</link>
+    <pubDate>Nov 14, 2013</pubDate>
+    <item>
+      <title>Configure</title>
+      <link>http://smssync.ushahidi.com/configure</link>
+      <pubDate>Nov 01, 2013</pubDate>
+      <description>Configure SMSSync</description>
+    </item>
+    <item>
+      <title>Contributors</title>
+      <link>http://smssync.ushahidi.com/contributors</link>
+      <pubDate>Nov 01, 2013</pubDate>
+      <description>SMSSync contributors</description>
+    </item>
+    <item>
+      <title>Developers</title>
+      <link>http://smssync.ushahidi.com/developers</link>
+      <pubDate>Nov 01, 2013</pubDate>
+      <description>SMSSync developer documentation</description>
+    </item>
+    <item>
+      <title>Download</title>
+      <link>http://smssync.ushahidi.com/download</link>
+      <pubDate>Nov 01, 2013</pubDate>
+      <description>Download SMSSync</description>
+    </item>
+    <item>
+      <title>Features</title>
+      <link>http://smssync.ushahidi.com/features</link>
+      <pubDate>Nov 01, 2013</pubDate>
+      <description>SMSSync features</description>
+    </item>
+    <item>
+      <title>Home</title>
+      <link>http://smssync.ushahidi.com/</link>
+      <pubDate>Oct 30, 2013</pubDate>
+      <description>SMSSync home page</description>
+    </item>
+    <item>
+      <title>Releases</title>
+      <link>http://smssync.ushahidi.com/releases</link>
+      <pubDate>Oct 30, 2013</pubDate>
+      <description>SMSSync releases</description>
+    </item>
+    <item>
+      <title>Screenshots</title>
+      <link>http://smssync.ushahidi.com/screenshot</link>
+      <pubDate>Oct 30, 2013</pubDate>
+      <description>SMSSync screenshots</description>
+    </item>
+  </channel>
+</rss>
