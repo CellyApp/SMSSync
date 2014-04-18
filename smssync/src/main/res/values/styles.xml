@@ -16,6 +16,13 @@
         <item name="android:listChoiceIndicatorSingle">@color/status_done</item>
         <item name="android:attr/activatedBackgroundIndicator">@null</item>
         <item name="activatedBackgroundIndicator">@null</item>
+        <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+    </style>
+    <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+      <item name="background">@color/abs__background_holo_light</item>
+      <item name="android:background">@color/abs__background_holo_light</item>
+
+      <item name="backgroundSplit">@color/abs__background_holo_light</item>
     </style>
 
     <style name="WidgetStyle">

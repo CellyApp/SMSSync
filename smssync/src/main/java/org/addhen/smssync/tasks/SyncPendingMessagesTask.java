@@ -30,6 +30,7 @@ import org.addhen.smssync.tasks.state.SyncState;
 import org.addhen.smssync.util.Logger;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -27,6 +27,7 @@ import org.addhen.smssync.R;
 import org.addhen.smssync.adapters.NavDrawerAdapter;
 import org.addhen.smssync.navdrawer.BaseNavDrawerItem;
 import org.addhen.smssync.navdrawer.BlacklistNavDrawerItem;
+import org.addhen.smssync.navdrawer.CellyNavDrawerItem;
 import org.addhen.smssync.navdrawer.DonationNavDrawerItem;
 import org.addhen.smssync.navdrawer.LogNavDrawerItem;
 import org.addhen.smssync.navdrawer.PendingMessagesNavDrawerItem;
@@ -95,6 +96,8 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
     protected DrawerLayout drawerLayout;
 
     protected ListView listView;
+
+    private CellyNavDrawerItem cellyNavDrawerItem;
 
     private PendingMessagesNavDrawerItem pendingMessagesNavDrawerItem;
 
@@ -271,6 +274,9 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
     }
 
     private void initNavDrawerMenuItems() {
+      cellyNavDrawerItem = new CellyNavDrawerItem(getString(R.string.celly),
+          R.drawable.celly, BaseActivity.this);
+
         pendingMessagesNavDrawerItem
                 = new PendingMessagesNavDrawerItem(
                 getString(R.string.pending_messages),
@@ -306,12 +312,14 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
 
             @Override
             public void run() {
+                cellyNavDrawerItem.setCounter();
                 sentMessagesNavDrawerItem.setCounter();
                 pendingMessagesNavDrawerItem.setCounter();
                 syncUrlNavDrawerItem.setCounter();
                 filterNavDrawerItem.setCounter();
                 whitelistNavDrawerItem.setCounter();
                 navDrawerItem.clear();
+                navDrawerItem.add(cellyNavDrawerItem);
                 navDrawerItem.add(pendingMessagesNavDrawerItem);
                 navDrawerItem.add(sentMessagesNavDrawerItem);
                 navDrawerItem.add(syncUrlNavDrawerItem);
