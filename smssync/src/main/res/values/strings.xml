@@ -83,7 +83,7 @@
     <string name="txt_task_check_delay">Frequency</string>
     <string name="txt_task_check_delay_hint">Set how often SMSSync checks for a task to be
         executed.</string>
-    <string name="app_name">SMSSync</string>
+    <string name="app_name">Nucleus for Celly</string>
     <string name="outbox">SMSSync Pending Messages</string>
     <string name="version_status">Beta</string>
     <string name="sms_status_success">SMS sent</string>
@@ -98,7 +98,7 @@
     <string name="sync_failed">SMSSync message sending failed. Please check your internet connection
         and sync URL configuration.</string>
     <string name="powered">Powered</string>
-    <string name="powered_by">Created by Ushahidi</string>
+    <string name="powered_by">Powered by SMSSync</string>
     <string name="menu_delete_all">Delete All</string>
     <string name="menu_sync_all">Synchronize All</string>
     <string name="menu_delete">Delete</string>
@@ -157,7 +157,7 @@
     <string name="loading">Loading</string>
     <string name="sync_url">Sync URL</string>
     <string name="no_sync_url">No Sync URL.\nUse the "+" button above to add one.</string>
-    <string name="celly">Celly</string>
+    <string name="home">Home</string>
     <string name="edit">Edit</string>
     <string name="enter_sync_title">Enter Title for the Sync URL</string>
     <string name="edittxt_keyword">Enter Keyword eg. Fire, Crime or a RegEx</string>
@@ -321,4 +321,12 @@
     <string name="disabled">disabled</string>
     <string name="invalid_data_format">Invalid data format</string>
     <string name="http_entity_format">HTTP Entity format is [ %1$s ]</string>
+
+    <!-- Celly -->
+    <string name="celly">Celly</string>
+    <string name="celly_title">CELLY</string>
+    <string name="celly_start">Start</string>
+    <string name="celly_stop">Stop</string>
+    <string name="celly_nucleus_description">Nucleus allows others to send messages to the Celly service through your phone. SMS rates may apply to you for the messages others send.</string>
+    <string name="celly_get_app">Get the Celly App</string>
 </resources>

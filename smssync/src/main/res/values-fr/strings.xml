@@ -73,7 +73,7 @@
     <string name="txt_task_check_delay_hint">\n Régler la fréquence de vérification lors de
         l\'éxécution des tâches\n
     </string>
-    <string name="app_name">\n SMSSync\n</string>
+    <string name="app_name">\n Nucleus for Celly\n</string>
     <string name="outbox">\n Messages en attente\n</string>
     <string name="version_status">Béta</string>
     <string name="sms_status_success">\n Message envoyé\n</string>
@@ -180,4 +180,5 @@
     <string name="empty_sync_url_title">Merci d\'entrer un titre pour l\'URL de synchronisation
     </string>
     <string name="valid_sync_url">Merci d\'entrer une URL valide</string>
+
 </resources>

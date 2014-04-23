@@ -29,9 +29,9 @@ public class Prefs {
 
     public static final String PREF_NAME = "SMS_SYNC_PREF";
 
-    public static int autoTime = 5;
+    public static int autoTime = 1; // Adjusted for Celly
 
-    public static int taskCheckTime = 5;
+    public static int taskCheckTime = 1; // Adjusted for Celly
 
     public static String website = "";
 
@@ -49,9 +49,9 @@ public class Prefs {
 
     public static Boolean enableReplyFrmServer = false;
 
-    public static Boolean enableAutoSync = false;
+    public static Boolean enableAutoSync = true; // Adjusted for Celly
 
-    public static Boolean enableTaskCheck = false;
+    public static Boolean enableTaskCheck = true; // Adjusted for Celly
 
     public static long lastSyncDate = 0;
 
@@ -84,8 +84,8 @@ public class Prefs {
         enableReply = settings.getBoolean("EnableReply", false);
         enableReplyFrmServer = settings.getBoolean("EnableReplyFrmServer",
                 false);
-        enableAutoSync = settings.getBoolean("AutoSync", false);
-        enableTaskCheck = settings.getBoolean("EnableTaskCheck", false);
+        enableAutoSync = settings.getBoolean("AutoSync", true); // Adjusted for Celly
+        enableTaskCheck = settings.getBoolean("EnableTaskCheck", true); // Adjusted for Celly
         autoTime = settings.getInt("AutoTime", autoTime);
         uniqueId = settings.getString("UniqueId", "");
         taskCheckTime = settings.getInt("taskCheck", taskCheckTime);

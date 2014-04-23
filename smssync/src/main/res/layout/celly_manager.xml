@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (c) 2010 Ushahidi Inc All rights reserved Contact: team@ushahidi.com
+	Website: http://www.ushahidi.com GNU Lesser General Public License Usage
+	This file may be used under the terms of the GNU Lesser General Public License
+	version 3 as published by the Free Software Foundation and appearing in the
+	file LICENSE.LGPL included in the packaging of this file. Please review the
+	following information to ensure the GNU Lesser General Public License version
+	3 requirements will be met: http://www.gnu.org/licenses/lgpl.html. If you
+	have questions regarding the use of this file, please contact Ushahidi developers
+	at team@ushahidi.com.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:paddingTop="0dp"
+              android:layout_height="match_parent">
+  <ScrollView
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:fillViewport="true"
+      >
+
+  <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+      <include layout="@layout/list_items"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@drawable/celly_bg"
+          >
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:background="@drawable/celly_logo"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/celly_title"
+        android:textSize="32sp"
+        android:textColor="@color/abs__background_holo_dark"
+        android:id="@+id/cellyTitle"
+        android:gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/cellyToggle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/celly_green"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/celly_start"
+    />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:background="@color/celly_whip_faded"
+    >
+      <TextView
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:text="@string/celly_nucleus_description"
+          android:textAlignment="center"
+          android:gravity="center"
+          android:padding="25dp"
+          android:textSize="18sp"
+          android:textColor="@color/abs__background_holo_dark"
+              android:id="@+id/cellyHelpText"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/cellyGetApp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="#3f9b77"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/celly_get_app"
+        />
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

@@ -108,9 +108,9 @@ public class Settings extends SherlockPreferenceActivity implements
             "15", "30", "60"
     };
 
-    private int autoTime = 5;
+    private int autoTime = 1;
 
-    private int taskCheckTime = 5;
+    private int taskCheckTime = 1;
 
     private int uniqueIdValidityStatus = 1;
 
@@ -262,6 +262,7 @@ public class Settings extends SherlockPreferenceActivity implements
 
         settings = getSharedPreferences(Prefs.PREF_NAME, 0);
 
+        /*
         if (replyPref.getText().equals("")) {
             replyPref.setText(getString(R.string.edittxt_reply_default));
         }
@@ -281,6 +282,7 @@ public class Settings extends SherlockPreferenceActivity implements
         } else {
             enableReply.setEnabled(true);
         }
+        */
 
         if (autoSync.isChecked()) {
             autoSyncTimes.setEnabled(true);
@@ -301,6 +303,7 @@ public class Settings extends SherlockPreferenceActivity implements
         taskCheckTime = initializeAutoTaskTime();
 
         editor = settings.edit();
+        /*
         editor.putString("ReplyPref", replyPref.getText());
         // log reply changes.
         if (!Prefs.reply.equals(replyPref.getText().toString())) {
@@ -309,6 +312,8 @@ public class Settings extends SherlockPreferenceActivity implements
                     replyPref.getDialogTitle().toString(), Prefs.reply,
                     replyPref.getText().toString()));
         }
+        */
+        /*
         editor.putBoolean("EnableAutoDelete", enableAutoDelete.isChecked());
         if (Prefs.autoDelete != enableAutoDelete.isChecked()) {
             boolean checked = enableAutoDelete.isChecked() ? true : false;
@@ -320,7 +325,9 @@ public class Settings extends SherlockPreferenceActivity implements
                     enableAutoDelete.getTitle().toString(), status,
                     check));
         }
+        */
 
+        /*
         editor.putBoolean("EnableReply", enableReply.isChecked());
         if (Prefs.enableReply != enableReply.isChecked()) {
             boolean checked = enableReply.isChecked() ? true : false;
@@ -345,6 +352,7 @@ public class Settings extends SherlockPreferenceActivity implements
                     enableReplyFrmServer.getTitle().toString(), status,
                     check));
         }
+        */
 
         editor.putBoolean("EnableTaskCheck", taskCheck.isChecked());
         if (Prefs.enableTaskCheck != taskCheck.isChecked()) {
@@ -387,6 +395,7 @@ public class Settings extends SherlockPreferenceActivity implements
                     taskCheckTimes.getEntries()[taskCheckTime - 1]));
         }
 
+        /*
         if (!TextUtils.isEmpty(uniqueId.getText())) {
             uniqueIdValidate(uniqueId.getText());
             editor.putString("UniqueId", "");
@@ -394,6 +403,7 @@ public class Settings extends SherlockPreferenceActivity implements
                 editor.putString("UniqueId", uniqueId.getText());
             }
         }
+        */
         editor.commit();
     }
 

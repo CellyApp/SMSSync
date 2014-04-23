@@ -24,6 +24,8 @@ public class CellyManager extends Model {
 
   private SyncUrl mSyncUrl;
 
+  List<SyncUrl> syncUrlList = new ArrayList<SyncUrl>();
+
   private SyncScheme syncScheme;
 
   public CellyManager() {
@@ -55,8 +57,7 @@ public class CellyManager extends Model {
     mSyncUrl = new SyncUrl();
     mSyncUrl.setTitle("celly");
     mSyncUrl.setSecret("secret");
-    mSyncUrl.setUrl("https://cel.ly/smssync");
-    List<SyncUrl> syncUrlList = new ArrayList<SyncUrl>();
+    mSyncUrl.setUrl("https://app.cel.ly/smssync");
     syncUrlList.add(mSyncUrl);
     return mSyncUrl != null;
 
@@ -82,8 +83,7 @@ public class CellyManager extends Model {
    */
   @Override
   public boolean save() {
-    //return Database.syncUrlContentProvider.addSyncUrl(this);
-    return true;
+    return Database.syncUrlContentProvider.addSyncUrl(mSyncUrl);
   }
 
   /**
@@ -92,8 +92,7 @@ public class CellyManager extends Model {
    * @return boolean
    */
   public boolean update() {
-    //return Database.syncUrlContentProvider.updateSyncUrl(this);
-    return true;
+    return Database.syncUrlContentProvider.updateSyncUrl(mSyncUrl);
   }
 
   /**
@@ -174,6 +173,40 @@ public class CellyManager extends Model {
   public void setId(int id) {
     this.id = id;
 
+  }
+
+  /**
+   * Add Sync URL to database
+   *
+   * @return boolean
+   */
+  public boolean addSyncUrl() {
+    SyncUrl syncUrl = new SyncUrl();
+    syncUrl.setKeywords("");
+    syncUrl.setSecret(getSecret());
+    syncUrl.setTitle(getTitle());
+    syncUrl.setUrl(getUrl());
+    syncUrl.setStatus(1);
+    syncUrl.setSyncScheme(new SyncScheme());
+    return syncUrl.save();
+
+  }
+
+  /**
+   * Add Sync URL to database
+   *
+   * @return boolean
+   */
+  public boolean updateSyncUrl(int id, SyncScheme scheme) {
+    SyncUrl syncUrl = new SyncUrl();
+    syncUrl.setId(id);
+    syncUrl.setKeywords("");
+    syncUrl.setSecret(getSecret());
+    syncUrl.setTitle(getTitle());
+    syncUrl.setUrl(getUrl());
+    syncUrl.setStatus(getStatus());
+    syncUrl.setSyncScheme(scheme);
+    return syncUrl.update();
   }
 
   @Override

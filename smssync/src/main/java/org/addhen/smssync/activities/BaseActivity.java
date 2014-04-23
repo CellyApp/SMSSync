@@ -103,7 +103,7 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
 
     private SentMessagesNavDrawerItem sentMessagesNavDrawerItem;
 
-    private SyncUrlNavDrawerItem syncUrlNavDrawerItem;
+    //private SyncUrlNavDrawerItem syncUrlNavDrawerItem;
 
     private DonationNavDrawerItem donationNavDrawerItem;
 
@@ -274,8 +274,8 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
     }
 
     private void initNavDrawerMenuItems() {
-      cellyNavDrawerItem = new CellyNavDrawerItem(getString(R.string.celly),
-          R.drawable.celly, BaseActivity.this);
+      cellyNavDrawerItem = new CellyNavDrawerItem(getString(R.string.home),
+          R.drawable.ic_home, BaseActivity.this);
 
         pendingMessagesNavDrawerItem
                 = new PendingMessagesNavDrawerItem(
@@ -286,9 +286,9 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
                 getString(R.string.sent_messages),
                 R.drawable.sent, BaseActivity.this);
 
-        syncUrlNavDrawerItem = new SyncUrlNavDrawerItem(getString(
-                R.string.sync_url),
-                R.drawable.sync_url, BaseActivity.this);
+        //syncUrlNavDrawerItem = new SyncUrlNavDrawerItem(getString(
+        //        R.string.sync_url),
+        //        R.drawable.sync_url, BaseActivity.this);
 
         donationNavDrawerItem = new DonationNavDrawerItem(getString(R.string.donate),
                 R.drawable.donate, BaseActivity.this);
@@ -315,14 +315,14 @@ public abstract class BaseActivity<V extends View> extends SherlockFragmentActiv
                 cellyNavDrawerItem.setCounter();
                 sentMessagesNavDrawerItem.setCounter();
                 pendingMessagesNavDrawerItem.setCounter();
-                syncUrlNavDrawerItem.setCounter();
+                //syncUrlNavDrawerItem.setCounter();
                 filterNavDrawerItem.setCounter();
                 whitelistNavDrawerItem.setCounter();
                 navDrawerItem.clear();
                 navDrawerItem.add(cellyNavDrawerItem);
                 navDrawerItem.add(pendingMessagesNavDrawerItem);
                 navDrawerItem.add(sentMessagesNavDrawerItem);
-                navDrawerItem.add(syncUrlNavDrawerItem);
+                //navDrawerItem.add(syncUrlNavDrawerItem);
                 //navDrawerItem.add(donationNavDrawerItem);
                 navDrawerItem.add(whitelistNavDrawerItem);
                 navDrawerItem.add(filterNavDrawerItem);
