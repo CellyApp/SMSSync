@@ -54,10 +54,13 @@ public class CellyFragment extends BaseListFragment<CellyManagerView, CellyManag
     super.onActivityResult(requestCode, resultCode, data);
     if (resultCode == NUCLEUS_CODE) {
       Context context = getActivity().getApplicationContext();
-      model.setSecret(data.getExtras().getString("apiKey"));
-      model.setStatus(1);
-      model.update();
-      syncUrl = model.getSyncUrl();
+      syncUrl = new SyncUrl();
+      syncUrl.setSecret(data.getExtras().getString("apiKey"));
+      syncUrl.setStatus(1);
+      syncUrl.setTitle("celly");
+      syncUrl.setUrl("https://app.cel.ly/smssync");
+      syncUrl.deleteAllSyncUrl();
+      syncUrl.save();
       toggleSync();
     }
   }
@@ -214,9 +217,23 @@ public class CellyFragment extends BaseListFragment<CellyManagerView, CellyManag
           //view.enableSmsSync.setChecked(false);
         }
       } else {
-        toastLong(R.string.no_enabled_sync_url);
-        Prefs.enabled = false;
         //view.enableSmsSync.setChecked(false);
+        pm.setComponentEnabledSetting(smsReceiverComponent,
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+            PackageManager.DONT_KILL_APP);
+
+        RunServicesUtil.stopCheckTaskService(getActivity());
+        RunServicesUtil.stopAutoSyncService(getActivity());
+
+        // stop check task schedule
+        getActivity().stopService(
+            new Intent(getActivity(),
+                CheckTaskScheduledService.class));
+        getActivity().stopService(
+            new Intent(getActivity(), CheckTaskService.class));
+
+        Util.clearNotify(getActivity());
+        Prefs.enabled = false;
       }
 
     Prefs.savePreferences(getActivity());

@@ -57,7 +57,8 @@ public class CellyManager extends Model {
     mSyncUrl = new SyncUrl();
     mSyncUrl.setTitle("celly");
     mSyncUrl.setSecret("secret");
-    mSyncUrl.setUrl("https://app.cel.ly/smssync");
+    mSyncUrl.setUrl("http://staging.cel.ly/smssync");
+    mSyncUrl.setKeywords(null);
     syncUrlList.add(mSyncUrl);
     return mSyncUrl != null;
 
@@ -182,7 +183,7 @@ public class CellyManager extends Model {
    */
   public boolean addSyncUrl() {
     SyncUrl syncUrl = new SyncUrl();
-    syncUrl.setKeywords("");
+    syncUrl.setKeywords(null);
     syncUrl.setSecret(getSecret());
     syncUrl.setTitle(getTitle());
     syncUrl.setUrl(getUrl());
@@ -200,7 +201,7 @@ public class CellyManager extends Model {
   public boolean updateSyncUrl(int id, SyncScheme scheme) {
     SyncUrl syncUrl = new SyncUrl();
     syncUrl.setId(id);
-    syncUrl.setKeywords("");
+    syncUrl.setKeywords(null);
     syncUrl.setSecret(getSecret());
     syncUrl.setTitle(getTitle());
     syncUrl.setUrl(getUrl());

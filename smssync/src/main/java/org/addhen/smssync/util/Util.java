@@ -264,7 +264,7 @@ public class Util {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
                 baseIntent, 0);
 
-        buildNotification(context, R.drawable.icon,
+        buildNotification(context, R.drawable.ic_stat_nucleus,
                 context.getString(R.string.notification_summary),
                 context.getString(R.string.app_name), pendingIntent, true);
 
@@ -285,7 +285,7 @@ public class Util {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
                 baseIntent, 0);
 
-        buildNotification(context, R.drawable.icon, message, notificationTitle,
+        buildNotification(context, R.drawable.ic_stat_nucleus, message, notificationTitle,
                 pendingIntent, false);
 
     }
