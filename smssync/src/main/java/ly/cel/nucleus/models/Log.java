@@ -14,11 +14,49 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.models;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+/**
+ * Log messages
+ */
+public class Log extends Model {
+
+    public String message;
+
+    public CharSequence timestamp;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public CharSequence getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = "";
+    }
+
+    @Override
+    public boolean load() {
+        return false;
+    }
+
+    @Override
+    public boolean save() {
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Log{" +
+                "message='" + message + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
     }
 }

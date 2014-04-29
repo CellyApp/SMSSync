@@ -14,11 +14,16 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
+package ly.cel.nucleus.exceptions;
 
-public class TrackerResolver {
+/**
+ * Localize exception messages
+ */
+public interface I8nException {
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+    /**
+     * Exception message resource ID
+     */
+    int resId();
+
 }

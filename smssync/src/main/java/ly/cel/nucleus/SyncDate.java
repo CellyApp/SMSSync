@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  *  Copyright (c) 2010 - 2013 Ushahidi Inc
  *  All rights reserved
@@ -14,11 +15,25 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
+
 package ly.cel.nucleus;
 
-public class TrackerResolver {
+import android.content.Context;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+/**
+ * Sets and returns the sync date of an executed task
+ */
+public class SyncDate {
+
+    public long getLastSyncedDate(Context context) {
+        Prefs.loadPreferences(context);
+        return Prefs.lastSyncDate;
     }
+
+    public void setLastSyncedDate(Context context, long lastSyncDate) {
+        Prefs.lastSyncDate = lastSyncDate;
+        Prefs.savePreferences(context);
+
+    }
+
 }

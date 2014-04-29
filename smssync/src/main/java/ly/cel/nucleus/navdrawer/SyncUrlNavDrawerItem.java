@@ -14,11 +14,39 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.navdrawer;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
+import ly.cel.nucleus.fragments.SyncUrlFragment;
+import ly.cel.nucleus.models.SyncUrl;
+
+/**
+ * Menu Item for SyncUrlFragment
+ */
+public class SyncUrlNavDrawerItem extends BaseNavDrawerItem {
+
+    private static final String TAG = "sync";
+
+    /**
+     * @param title
+     * @param iconRes
+     */
+    public SyncUrlNavDrawerItem(String title, int iconRes,
+            SherlockFragmentActivity activity) {
+        super(title, iconRes, activity);
     }
+
+    @Override
+    protected void onSelectItem() {
+        fragment = new SyncUrlFragment();
+        showFragment(TAG);
+    }
+
+    @Override
+    public void setCounter() {
+        mCounter = new SyncUrl().totalActiveSynUrl();
+    }
+
 }

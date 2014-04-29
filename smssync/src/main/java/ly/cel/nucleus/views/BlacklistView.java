@@ -14,11 +14,31 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.views;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import ly.cel.nucleus.R;
+
+import android.app.Activity;
+import android.widget.CheckBox;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+public class BlacklistView extends View {
+
+    @Widget(R.id.enable_checkbox)
+    public CheckBox enableBlacklist;
+
+    @Widget(R.id.loading_list_progress)
+    public ProgressBar listLoadingProgress;
+
+    @Widget(android.R.id.empty)
+    public TextView emptyView;
+
+    public BlacklistView(Activity activity) {
+        super(activity);
+        emptyView.setText(R.string.no_blacklist);
+        enableBlacklist.setText(R.string.enable_blacklist);
     }
+
 }

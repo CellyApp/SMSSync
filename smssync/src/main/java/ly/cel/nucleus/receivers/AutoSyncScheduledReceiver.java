@@ -14,11 +14,25 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.receivers;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import ly.cel.nucleus.services.AutoSyncScheduledService;
+import ly.cel.nucleus.services.SmsSyncServices;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+/**
+ * This Receiver class is used to listen for Broadcast Intents from the Alarm manager so it executes
+ * all task that exist.
+ */
+public class AutoSyncScheduledReceiver extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        SmsSyncServices.sendWakefulTask(context, AutoSyncScheduledService.class);
     }
+
 }

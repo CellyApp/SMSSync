@@ -14,11 +14,30 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.receivers;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import ly.cel.nucleus.services.SmsReceiverService;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+/**
+ * This class handles SMS broadcast receiver.
+ *
+ * @author eyedol
+ */
+
+public class SmsReceiverKitKat extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+
+        intent.setClass(context, SmsReceiverService.class);
+        intent.putExtra("result", getResultCode());
+
+        SmsReceiverService.beginStartingService(context, intent);
     }
+
 }

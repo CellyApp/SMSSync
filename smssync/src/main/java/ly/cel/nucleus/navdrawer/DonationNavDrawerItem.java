@@ -14,11 +14,39 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.navdrawer;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
+import ly.cel.nucleus.activities.DonationActivity;
+
+import android.content.Intent;
+
+/**
+ * Donation nav drawer item
+ */
+public class DonationNavDrawerItem extends BaseNavDrawerItem {
+
+    /**
+     *
+     * @param title
+     * @param iconRes
+     * @param activity
+     */
+    public DonationNavDrawerItem(String title, int iconRes,
+            SherlockFragmentActivity activity) {
+        super(title, iconRes, activity);
+    }
+
+    @Override
+    protected void onSelectItem() {
+        Intent i = new Intent(mActivity, DonationActivity.class);
+        launchActivity(i);
+    }
+
+    @Override
+    public void setCounter() {
+
     }
 }

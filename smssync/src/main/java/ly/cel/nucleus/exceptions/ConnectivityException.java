@@ -14,11 +14,18 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.exceptions;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+/**
+ * Handle all connection exceptions
+ */
+public class ConnectivityException extends Exception {
+
+    private static final long serialVersionUID = 1624406347941512333L;
+
+    public ConnectivityException(String message) {
+        super(message);
     }
+
 }

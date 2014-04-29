@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  *  Copyright (c) 2010 - 2013 Ushahidi Inc
  *  All rights reserved
@@ -14,11 +15,13 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.listeners;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+/**
+ * Listener interface to communicate with fragments host activity
+ */
+public interface OnFragmentListViewRefreshListener {
+
+    public void OnFragmentListViewRefresh();
 }

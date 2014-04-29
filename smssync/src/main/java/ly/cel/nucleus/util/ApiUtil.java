@@ -14,11 +14,35 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.util;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class ApiUtil {
+
+    private JSONObject jsonObject;
+
+
+    private boolean processingResult;
+
+    public ApiUtil(String jsonString) {
+        processingResult = true;
+
+        try {
+            jsonObject = new JSONObject(jsonString);
+        } catch (JSONException e) {
+            processingResult = false;
+        }
     }
+
+    public JSONObject getJsonObject() {
+        return jsonObject;
+    }
+
+    public boolean getProcessingResult() {
+        return processingResult;
+    }
+
 }

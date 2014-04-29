@@ -14,11 +14,40 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.navdrawer;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
+import ly.cel.nucleus.fragments.BlacklistFragment;
+import ly.cel.nucleus.models.Filter;
+
+/**
+ * Filter Nav Drawer Item
+ */
+public class BlacklistNavDrawerItem extends BaseNavDrawerItem {
+
+    private static final String TAG = "blacklist";
+
+    /**
+     * Filter Nav Drawer
+     */
+    public BlacklistNavDrawerItem(String title, int iconRes,
+            SherlockFragmentActivity activity) {
+        super(title, iconRes, activity);
+    }
+
+    @Override
+    protected void onSelectItem() {
+        fragment = new BlacklistFragment();
+        showFragment(TAG);
+    }
+
+
+    @Override
+    public void setCounter() {
+        Filter filter = new Filter();
+        filter.loadByStatus(Filter.Status.BLACKLIST);
+        mCounter = filter.getFilterList().size();
     }
 }

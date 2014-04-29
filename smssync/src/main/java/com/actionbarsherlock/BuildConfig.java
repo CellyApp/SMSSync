@@ -5,5 +5,5 @@ package com.actionbarsherlock;
  */
 public class BuildConfig {
 
-    public static final boolean DEBUG = org.addhen.smssync.BuildConfig.DEBUG;
+    public static final boolean DEBUG = ly.cel.nucleus.BuildConfig.DEBUG;
 }

@@ -14,11 +14,33 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.database;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+import ly.cel.nucleus.models.SyncUrl;
+
+import java.util.List;
+
+public interface ISyncUrlContentProvider {
+
+    public List<SyncUrl> fetchSyncUrl();
+
+    public List<SyncUrl> fetchSyncUrlById(int id);
+
+    public List<SyncUrl> fetchSyncUrlByStatus(int status);
+
+    public boolean addSyncUrl(SyncUrl syncUrl);
+
+    public boolean addSyncUrl(List<SyncUrl> syncUrl);
+
+    public boolean deleteAllSyncUrl();
+
+    public boolean deleteSyncUrlById(int id);
+
+    public boolean updateSyncUrl(SyncUrl syncUrl);
+
+    public boolean updateStatus(SyncUrl syncUrl);
+
+    public int totalActiveSyncUrl();
+
 }

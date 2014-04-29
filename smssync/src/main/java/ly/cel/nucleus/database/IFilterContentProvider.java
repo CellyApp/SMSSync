@@ -14,11 +14,31 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.database;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+import ly.cel.nucleus.models.Filter;
+
+import java.util.List;
+
+public interface IFilterContentProvider {
+
+    public List<Filter> fetchAll();
+
+    public List<Filter> fetchById(int id);
+
+    public List<Filter> fetchByStatus(int status);
+
+    public boolean add(Filter syncUrl);
+
+    public boolean add(List<Filter> filterLists);
+
+    public boolean deleteAll();
+
+    public boolean deleteById(int id);
+
+    public boolean update(Filter filter);
+
+    public int total();
+
 }

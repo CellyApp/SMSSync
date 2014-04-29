@@ -14,11 +14,15 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.tasks;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+/**
+ * ProgressCallback
+ *
+ * Callback interface for ProgressTask
+ */
+public interface ProgressCallback {
+
+    public void execute();
 }

@@ -14,11 +14,35 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
+package ly.cel.nucleus.util;
 
-public class TrackerResolver {
+import ly.cel.nucleus.BuildConfig;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import android.util.Log;
+
+public class Logger {
+
+    public static final boolean LOGGING_MODE = BuildConfig.DEBUG;
+
+    public Logger() {
+
+    }
+
+    public static void log(String tag, String message) {
+        if (LOGGING_MODE) {
+            Log.i(tag, message);
+        }
+    }
+
+    public static void log(String tag, String format, Object... args) {
+        if (LOGGING_MODE) {
+            Log.i(tag, String.format(format, args));
+        }
+    }
+
+    public static void log(String tag, String message, Exception ex) {
+        if (LOGGING_MODE) {
+            Log.e(tag, message, ex);
+        }
     }
 }

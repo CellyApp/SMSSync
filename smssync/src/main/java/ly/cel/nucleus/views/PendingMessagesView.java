@@ -14,11 +14,38 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.views;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import ly.cel.nucleus.R;
+
+import android.app.Activity;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+public class PendingMessagesView extends View {
+
+    @Widget(R.id.status_label)
+    public TextView status;
+
+    @Widget(R.id.details_sync_label)
+    public TextView details;
+
+    @Widget(R.id.details_sync_progress)
+    public ProgressBar progressStatus;
+
+    @Widget(R.id.sync_button)
+    public Button sync;
+
+    @Widget(R.id.loading_list_progress)
+    public ProgressBar listLoadingProgress;
+
+    @Widget(android.R.id.empty)
+    public TextView emptyView;
+
+    public PendingMessagesView(Activity activity) {
+        super(activity);
     }
+
 }

@@ -14,11 +14,37 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.navdrawer;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
+import ly.cel.nucleus.fragments.LogFragment;
+
+/**
+ * Menu Item for LogFragment
+ */
+public class LogNavDrawerItem extends BaseNavDrawerItem {
+
+    private static final String TAG = "log";
+
+    /**
+     * @param title
+     * @param iconRes
+     */
+    public LogNavDrawerItem(String title, int iconRes,
+            SherlockFragmentActivity activity) {
+        super(title, iconRes, activity);
     }
+
+    @Override
+    protected void onSelectItem() {
+        fragment = new LogFragment();
+        showFragment(TAG);
+    }
+
+    @Override
+    public void setCounter() {
+    }
+
 }

@@ -14,11 +14,17 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
+package ly.cel.nucleus.views;
 
-public class TrackerResolver {
+import android.app.Activity;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+/**
+ * @author eyedol
+ */
+public class MainView extends View {
+
+    public MainView(Activity activity) {
+        super(activity);
     }
+
 }

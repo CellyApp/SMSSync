@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  *  Copyright (c) 2010 - 2013 Ushahidi Inc
  *  All rights reserved
@@ -14,11 +15,28 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.tasks;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import java.util.ArrayList;
+
+/**
+ * Configures the sync task
+ */
+public class SyncConfig {
+
+    public final boolean skip;
+
+    public final int tries;
+
+    public final ArrayList<String> messageUuids;
+
+    public final SyncType syncType;
+
+    public SyncConfig(int tries, boolean skip, ArrayList<String> messageUuids, SyncType syncType) {
+        this.tries = tries;
+        this.skip = skip;
+        this.syncType = syncType;
+        this.messageUuids = messageUuids;
     }
 }

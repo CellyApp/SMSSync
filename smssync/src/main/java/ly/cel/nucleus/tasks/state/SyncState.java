@@ -14,11 +14,16 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.tasks.state;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+/**
+ * Provide the various state a sync task can go through
+ */
+public enum SyncState {
+    INITIAL,
+    SYNC,
+    ERROR,
+    CANCELED_SYNC,
+    FINISHED_SYNC
 }

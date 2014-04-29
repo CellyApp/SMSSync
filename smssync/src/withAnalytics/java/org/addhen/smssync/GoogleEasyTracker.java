@@ -1,4 +1,4 @@
-package org.addhen.smssync;
+package ly.cel.nucleus;
 
 import com.google.analytics.tracking.android.EasyTracker;
 

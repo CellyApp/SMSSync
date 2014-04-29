@@ -14,11 +14,23 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.database;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+public interface IFilterSchema {
+
+    public static final String ID = "_id";
+
+    public static final String PHONE_NUMBER = "phone_number";
+
+    public static final String STATUS = "status";
+
+    public static final String TABLE = "whitelist_blacklist";
+
+    public static final String[] COLUMNS = new String[]{ID, PHONE_NUMBER, STATUS};
+
+    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
+            + TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + STATUS + " INTEGER , " + PHONE_NUMBER + " TEXT "
+            + ")";
 }

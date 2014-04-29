@@ -14,11 +14,32 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.database;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
-    }
+import ly.cel.nucleus.models.Message;
+
+import java.util.List;
+
+/**
+ * Interface to provide methods for manipulating messages db
+ */
+public interface IMessagesContentProvider {
+
+    public int messagesCount();
+
+    public boolean addMessages(List<Message> messages);
+
+    public boolean addMessages(Message messages);
+
+    public boolean deleteMessagesByUuid(String messageUuid);
+
+    public boolean deleteAllMessages();
+
+    public List<Message> fetchMessagesByUuid(String messageUuid);
+
+    public List<Message> fetchAllMessages();
+
+    public List<Message> fetchMessagesByLimit(int limit);
+
 }

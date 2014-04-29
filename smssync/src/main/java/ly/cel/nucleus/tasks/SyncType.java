@@ -1,3 +1,4 @@
+
 /*******************************************************************************
  *  Copyright (c) 2010 - 2013 Ushahidi Inc
  *  All rights reserved
@@ -14,11 +15,42 @@
  * If you have questions regarding the use of this file, please contact
  * Ushahidi developers at team@ushahidi.com.
  ******************************************************************************/
-package ly.cel.nucleus;
 
-public class TrackerResolver {
+package ly.cel.nucleus.tasks;
 
-    public static AppTracker getInstance() {
-        return new GoogleEasyTracker();
+import ly.cel.nucleus.R;
+
+import android.content.Intent;
+
+/**
+ * Determine which sync type to execute
+ */
+public enum SyncType {
+    UNKNOWN(R.string.unknown),
+    MANUAL(R.string.manual);
+
+    public final int resId;
+
+    SyncType(int resId) {
+        this.resId = resId;
+    }
+
+    public static final String EXTRA = "org.addhen.smssync.SyncTypeAsString";
+
+    public static SyncType fromIntent(Intent intent) {
+        if (intent.hasExtra(EXTRA)) {
+            final String name = intent.getStringExtra(EXTRA);
+            for (SyncType type : values()) {
+                if (type.name().equals(name)) {
+                    return type;
+                }
+            }
+        }
+        return UNKNOWN;
+
+    }
+
+    public boolean isBackground() {
+        return this != MANUAL;
     }
 }
