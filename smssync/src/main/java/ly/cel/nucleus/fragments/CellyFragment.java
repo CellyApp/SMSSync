@@ -68,6 +68,8 @@ public class CellyFragment extends BaseListFragment<CellyManagerView, CellyManag
     smsReceiverComponent = new ComponentName(getActivity(),
         SmsReceiver.class);
 
+    view.cellyGetApp.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.celly_logo), null, null, null);
+
     view.cellyGetApp.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -110,9 +112,11 @@ public class CellyFragment extends BaseListFragment<CellyManagerView, CellyManag
     if (Prefs.enabled) {
       view.cellyToggle.setBackgroundColor(getResources().getColor(R.color.pending_color));
       view.cellyToggle.setText(getResources().getString(R.string.celly_stop));
+      view.cellyHelpText.setText(getResources().getString(R.string.celly_nucleus_description_running));
     } else {
       view.cellyToggle.setBackgroundColor(getResources().getColor(R.color.celly_green));
       view.cellyToggle.setText(getResources().getString(R.string.celly_start));
+      view.cellyHelpText.setText(getResources().getString(R.string.celly_nucleus_description));
     }
   }
 
