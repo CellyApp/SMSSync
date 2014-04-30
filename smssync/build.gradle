@@ -25,8 +25,8 @@ android {
         }
 
         defaultConfig {
-            testPackageName "org.addhen.smssync.tests"
-            packageName "org.addhen.smssync"
+            testPackageName "ly.cel.nucleus.tests"
+            packageName "ly.cel.nucleus"
         }
 
         // Move the build types to build-types/<type>
@@ -70,8 +70,8 @@ android {
     }
 
     defaultConfig {
-        versionCode 20
-        versionName "2.5.1"
+        versionCode 21
+        versionName "1.0.1"
         minSdkVersion 8
         targetSdkVersion 19
     }

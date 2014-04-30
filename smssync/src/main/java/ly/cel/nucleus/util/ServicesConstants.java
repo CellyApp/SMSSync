@@ -27,19 +27,19 @@ public class ServicesConstants {
 
     public static int AUTO_SYNC_SCHEDULED_SERVICE_REQUEST_CODE = 3;
 
-    public static String AUTO_SYNC_ACTION = "org.addhen.smssync.syncservices.autosync";
+    public static String AUTO_SYNC_ACTION = "ly.cel.nucleus.syncservices.autosync";
 
-    public static String CHECT_TASK_ACTION = "org.addhen.smssync.syncservices.checktask";
+    public static String CHECT_TASK_ACTION = "ly.cel.nucleus.syncservices.checktask";
 
     public static String AUTO_SYNC_SCHEDULED_ACTION
-            = "org.addhen.smssync.syncservices.autosyncscheduled";
+            = "ly.cel.nucleus.syncservices.autosyncscheduled";
 
     public static String CHECT_TASK_SCHEDULED_ACTION
-            = "org.addhen.smssync.syncservices.checktaskscheduled";
+            = "ly.cel.nucleus.syncservices.checktaskscheduled";
 
-    public static String FAILED_ACTION = "org.addhen.smssync.syncservices.failed";
+    public static String FAILED_ACTION = "ly.cel.nucleus.syncservices.failed";
 
-    public static String BATTERY_LEVEL = "org.addhen.smssync.syncservices.batterylevel";
+    public static String BATTERY_LEVEL = "ly.cel.nucleus.syncservices.batterylevel";
 
     public static String MESSAGE_UUID = "message_uuid";
 
@@ -51,5 +51,5 @@ public class ServicesConstants {
 
     public static final int INACTIVE_SYNC_URL = 1;
 
-    public static final String DEFAULT_SMS_PROVIDER = "org.addhen.smssync.defaultsmsprovider";
+    public static final String DEFAULT_SMS_PROVIDER = "ly.cel.nucleus.defaultsmsprovider";
 }

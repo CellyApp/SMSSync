@@ -35,7 +35,7 @@ public enum SyncType {
         this.resId = resId;
     }
 
-    public static final String EXTRA = "org.addhen.smssync.SyncTypeAsString";
+    public static final String EXTRA = "ly.cel.nucleus.SyncTypeAsString";
 
     public static SyncType fromIntent(Intent intent) {
         if (intent.hasExtra(EXTRA)) {

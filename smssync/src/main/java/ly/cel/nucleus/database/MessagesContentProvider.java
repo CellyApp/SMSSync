@@ -77,7 +77,7 @@ public class MessagesContentProvider extends DbContentProvider implements
     /*
      * (non-Javadoc)
      * @see
-     * org.addhen.smssync.database.IMessagesContentProvider#addMessages(java
+     * ly.cel.nucleus.database.IMessagesContentProvider#addMessages(java
      * .util.List)
      */
     @Override
@@ -98,8 +98,8 @@ public class MessagesContentProvider extends DbContentProvider implements
     /*
      * (non-Javadoc)
      * @see
-     * org.addhen.smssync.database.IMessagesContentProvider#addMessages(org.
-     * addhen.smssync.models.MessageModel)
+     * ly.cel.nucleus.database.IMessagesContentProvider#addMessages(ly.
+     * cel.nucleus.models.MessageModel)
      */
     @Override
     public boolean addMessages(Message messages) {
@@ -133,7 +133,7 @@ public class MessagesContentProvider extends DbContentProvider implements
     /*
      * (non-Javadoc)
      * @see
-     * org.addhen.smssync.database.IMessagesContentProvider#fetchMessagesById
+     * ly.cel.nucleus.database.IMessagesContentProvider#fetchMessagesById
      * (int)
      */
     @Override
@@ -165,7 +165,7 @@ public class MessagesContentProvider extends DbContentProvider implements
     /*
      * (non-Javadoc)
      * @see
-     * org.addhen.smssync.database.IMessagesContentProvider#fetchAllMessages()
+     * ly.cel.nucleus.database.IMessagesContentProvider#fetchAllMessages()
      */
     @Override
     public List<Message> fetchAllMessages() {
@@ -191,7 +191,7 @@ public class MessagesContentProvider extends DbContentProvider implements
     /*
      * (non-Javadoc)
      * @see
-     * org.addhen.smssync.database.IMessagesContentProvider#fetchMessagesByLimit
+     * ly.cel.nucleus.database.IMessagesContentProvider#fetchMessagesByLimit
      * (int)
      */
     @Override

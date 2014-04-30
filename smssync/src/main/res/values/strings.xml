@@ -327,7 +327,7 @@
     <string name="celly_title">CELLY</string>
     <string name="celly_start">Start</string>
     <string name="celly_stop">Stop</string>
-    <string name="celly_nucleus_description">Nucleus allows you to turn your phone into an SMS Gateway for Celly, enabling text messaging in places where Celly’s short code (23559) doesn’t work. /n/n Warning: this app will intercept all of your texts and forward them to Celly - an unlimited texting plan is highly recommended.</string>
+    <string name="celly_nucleus_description">Nucleus allows you to turn your phone into an SMS Gateway for Celly, enabling text messaging in places where Celly’s short code (23559) doesn’t work. \n\n Warning: this app will intercept all of your texts and forward them to Celly - an unlimited texting plan is highly recommended.</string>
     <string name="celly_nucleus_description_running">Nucleus is running. Tell people to text to your phone number to interact with Celly. This app is intercepting all of your text messages and forwarding them to Celly. Stop and uninstall if this isn’t what you want.</string>
     <string name="celly_get_app">Get the Celly App</string>
 </resources>

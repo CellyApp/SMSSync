@@ -68,8 +68,6 @@ public class CellyFragment extends BaseListFragment<CellyManagerView, CellyManag
     smsReceiverComponent = new ComponentName(getActivity(),
         SmsReceiver.class);
 
-    view.cellyGetApp.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.celly_logo), null, null, null);
-
     view.cellyGetApp.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {

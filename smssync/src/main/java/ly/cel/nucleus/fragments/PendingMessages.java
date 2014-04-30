@@ -61,7 +61,7 @@ public class PendingMessages
         BaseListFragment<PendingMessagesView, Message, PendingMessagesAdapter> implements
         android.view.View.OnClickListener {
 
-    private static final String STATE_CHECKED = "org.addhen.smssync.fragments.STATE_CHECKED";
+    private static final String STATE_CHECKED = "ly.cel.nucleus.fragments.STATE_CHECKED";
 
     private Intent syncPendingMessagesServiceIntent;
 
