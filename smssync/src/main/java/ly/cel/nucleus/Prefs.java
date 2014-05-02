@@ -28,7 +28,7 @@ import android.content.SharedPreferences;
 public class Prefs {
 
     public static final String PREF_NAME = "SMS_SYNC_PREF";
-    public static final long INSTANT_TIME = 10000;
+    public static final long INSTANT_TIME = 5000;
 
     public static int autoTime = -1; // Adjusted for Celly
 
