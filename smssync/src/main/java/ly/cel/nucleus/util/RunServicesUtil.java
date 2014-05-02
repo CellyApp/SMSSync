@@ -97,7 +97,12 @@ public class RunServicesUtil {
         if (Prefs.enableTaskCheck && Prefs.enabled) {
 
             // start the scheduler for 'task check' service
-            final long interval = (Prefs.taskCheckTime * 60000);
+            long interval;
+            if(Prefs.taskCheckTime==-1) {
+                interval = Prefs.INSTANT_TIME;
+            } else {
+                interval = (Prefs.taskCheckTime * 60000);
+            }
 
             final Intent intent = new Intent(context,
                     CheckTaskScheduledReceiver.class);
@@ -128,7 +133,12 @@ public class RunServicesUtil {
         Prefs.loadPreferences(context);
         if (Prefs.enableAutoSync && Prefs.enabled) {
             // start the scheduler for auto sync service
-            final long interval = (Prefs.autoTime * 60000);
+            long interval;
+            if(Prefs.autoTime==-1) {
+                interval = Prefs.INSTANT_TIME;
+            } else {
+                interval = (Prefs.autoTime * 60000);
+            }
             final Intent intent = new Intent(context, AutoSyncScheduledReceiver.class);
             Logger.log(CLASS_TAG, "Auto sync service started");
             // run the service

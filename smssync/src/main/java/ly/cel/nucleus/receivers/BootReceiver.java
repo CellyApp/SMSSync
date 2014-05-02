@@ -74,7 +74,12 @@ public class BootReceiver extends BroadcastReceiver {
                         context.startService(syncPendingMessagesServiceIntent);
 
                         // start the scheduler for auto sync service
-                        long interval = (Prefs.autoTime * 60000);
+                        long interval;
+                        if(Prefs.autoTime==-1) {
+                           interval = Prefs.INSTANT_TIME;
+                        } else {
+                           interval = (Prefs.autoTime * 60000);
+                        }
                         new ScheduleServices(
                                 context,
                                 new Intent(context, AutoSyncScheduledReceiver.class),
@@ -89,7 +94,12 @@ public class BootReceiver extends BroadcastReceiver {
                                 CheckTaskService.class);
 
                         // start the scheduler for 'task check' service
-                        long interval = (Prefs.taskCheckTime * 60000);
+                        long interval;
+                        if(Prefs.taskCheckTime==-1) {
+                            interval = Prefs.INSTANT_TIME;
+                        } else {
+                            interval = (Prefs.taskCheckTime * 60000);
+                        }
                         new ScheduleServices(
                                 context,
                                 new Intent(context, CheckTaskScheduledReceiver.class),

@@ -96,13 +96,13 @@ public class Settings extends SherlockPreferenceActivity implements
     private static final String URL = "http://smssync.ushahidi.com";
 
     private CharSequence[] autoSyncEntries = {
-            "1 Minute", "2 Minutes",
+            "Instant","1 Minute", "2 Minutes",
             "3 Minutes", "4 Minutes", "5 Minutes", "10 Minutes", "15 Minutes",
             "30 Minutes", "60 Minutes"
     };
 
     private CharSequence[] autoSyncValues = {
-            "1", "2", "3", "4", "5", "10",
+            "Instant","1", "2", "3", "4", "5", "10",
             "15", "30", "60"
     };
 
@@ -216,6 +216,8 @@ public class Settings extends SherlockPreferenceActivity implements
             return 30;
         } else if (autoSyncTimes.getValue().matches("60")) {
             return 60;
+        } else if (autoSyncTimes.getValue().matches("Instant")) {
+            return -1;
         } else {
             return 5;
         }
@@ -246,6 +248,8 @@ public class Settings extends SherlockPreferenceActivity implements
             return 30;
         } else if (taskCheckTimes.getValue().matches("60")) {
             return 60;
+        } else if (taskCheckTimes.getValue().matches("Instant")) {
+            return -1;
         } else {
             return 5;
         }
