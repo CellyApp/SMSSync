@@ -38,7 +38,7 @@ public class CellyFragment extends BaseListFragment<CellyManagerView, CellyManag
   private SyncUrl syncUrl;
 
   public CellyFragment() {
-    super(CellyManagerView.class, CellyAdapter.class, R.layout.celly_manager, R.menu.sync_url_menu, android.R.id.list);
+    super(CellyManagerView.class, CellyAdapter.class, R.layout.celly_manager, R.menu.celly_manager_menu, android.R.id.list);
     model = new CellyManager();
   }
 
