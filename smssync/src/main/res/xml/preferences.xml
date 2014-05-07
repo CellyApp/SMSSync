@@ -57,7 +57,7 @@
                 android:title="@string/chk_enable_auto_sync"/>
 
         <ListPreference
-                android:defaultValue="1"
+                android:defaultValue="Instant"
                 android:dialogTitle="@string/txt_auto_sync_delay"
                 android:key="auto_sync_times"
                 android:summary="@string/auto_sync_delay_hint"
@@ -71,7 +71,7 @@
                 android:title="@string/chk_enable_task_check"/>
 
         <ListPreference
-                android:defaultValue="1"
+                android:defaultValue="Instant"
                 android:dialogTitle="@string/txt_task_check_delay"
                 android:key="task_check_times"
                 android:summary="@string/txt_task_check_delay_hint"

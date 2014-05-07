@@ -99,7 +99,10 @@ public abstract class SmsSyncServices extends IntentService {
         super.onCreate();
         // load setting. Just in case someone changes a setting
         Prefs.loadPreferences(this);
-        MainApplication.bus.register(this);
+        try {
+          MainApplication.bus.register(this);
+        } catch (IllegalArgumentException e) {
+        }
     }
 
 
@@ -157,7 +160,10 @@ public abstract class SmsSyncServices extends IntentService {
                 && getPhoneWakeLock(this.getApplicationContext()) != null) {
             getPhoneWakeLock(this.getApplicationContext()).release();
         }
-        MainApplication.bus.unregister(this);
+        try {
+          MainApplication.bus.unregister(this);
+        } catch (IllegalArgumentException e) {
+        }
     }
 
     protected void log(String message) {

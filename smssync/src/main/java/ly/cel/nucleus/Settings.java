@@ -35,6 +35,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.text.TextUtils;
+import android.util.Log;
 
 /**
  * This class handles all related task for settings on SMSSync. TODO // move the UI code into it's
@@ -106,9 +107,9 @@ public class Settings extends SherlockPreferenceActivity implements
             "15", "30", "60"
     };
 
-    private int autoTime = 1;
+    private int autoTime = -1;
 
-    private int taskCheckTime = 1;
+    private int taskCheckTime = -1;
 
     private int uniqueIdValidityStatus = 1;
 
@@ -382,10 +383,14 @@ public class Settings extends SherlockPreferenceActivity implements
 
         editor.putInt("AutoTime", autoTime);
         if (Prefs.autoTime != autoTime) {
+          /*
+            CharSequence old = autoSyncTimes.getEntries()[Prefs.autoTime - 1];
+            CharSequence newAT = autoSyncTimes.getEntries()[autoTime - 1];
             Util.logActivities(this, getString(R.string.settings_changed,
                     autoSyncTimes.getTitle().toString(),
-                    autoSyncTimes.getEntries()[Prefs.autoTime - 1],
-                    autoSyncTimes.getEntries()[autoTime - 1]));
+                    old,
+                    newAT));
+        */
         }
 
         editor.putInt("taskCheck", taskCheckTime);

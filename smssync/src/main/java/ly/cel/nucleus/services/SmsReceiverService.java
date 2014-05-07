@@ -98,7 +98,10 @@ public class SmsReceiverService extends Service {
         statusIntent = new Intent(ServicesConstants.AUTO_SYNC_ACTION);
         mServiceLooper = thread.getLooper();
         mServiceHandler = new ServiceHandler(this, mServiceLooper);
-        MainApplication.bus.register(this);
+        try {
+          MainApplication.bus.register(this);
+        } catch (IllegalArgumentException e) {
+        }
 
     }
 
@@ -114,7 +117,10 @@ public class SmsReceiverService extends Service {
     @Override
     public void onDestroy() {
         mServiceLooper.quit();
-        MainApplication.bus.unregister(this);
+        try {
+          MainApplication.bus.unregister(this);
+        } catch (IllegalArgumentException e) {
+        }
         super.onDestroy();
     }
 
